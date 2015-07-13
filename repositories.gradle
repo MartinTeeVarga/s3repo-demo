@@ -22,8 +22,6 @@ repositories {
 }
 
 publishing {
-    group = 'is.kul.aws'
-    archivesBaseName = 's3repo-demo'
     publications {
         mavenJava(MavenPublication) {
             from components.java
