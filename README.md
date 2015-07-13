@@ -85,6 +85,11 @@ Example
 This repository contains an example of the S3 use. Rename `gradle.properties.template` to `gradle.properties` and add
 your own S3 config.
 
+Migration from other maven repositories
+---------------------------------------
+I have successfully migrated Apache Archiva to S3 simply by copying the whole directory structure from Archiva's data 
+folder to S3. Any maven repository should be possible to migrate the same way.
+
 Future work
 -----------
 Pruning of the snapshots on release or scheduler. 
