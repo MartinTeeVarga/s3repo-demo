@@ -56,6 +56,8 @@ To include source jars, test jars or other archives, e.g. from distribution plug
 Group Id, Artifact Id can be set here as well. 
 
 ```gradle
+apply plugin: 'maven-publish'
+
 publishing {
     publications {
         maven(MavenPublication) {
