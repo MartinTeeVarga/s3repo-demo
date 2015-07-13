@@ -40,6 +40,8 @@ how to switch between two repositories and how to reference previously defined r
 with [Gradle Release Plugin](https://github.com/researchgate/gradle-release).
 
 ```gradle
+apply plugin: 'maven-publish'
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
