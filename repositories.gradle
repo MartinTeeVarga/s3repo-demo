@@ -1,0 +1,35 @@
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+
+repositories {
+    mavenCentral()
+    maven {
+        name "s3RepoSnapshots"
+        url "$s3repoBaseUrl/snapshots"
+        credentials(AwsCredentials) {
+            accessKey awsAccessKey
+            secretKey awsSecretKey
+        }
+    }
+    maven {
+        name "s3RepoInternal"
+        url "$s3repoBaseUrl/internal"
+        credentials(AwsCredentials) {
+            accessKey awsAccessKey
+            secretKey awsSecretKey
+        }
+    }
+}
+
+publishing {
+    group = 'is.kul.aws'
+    archivesBaseName = 's3repo-demo'
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        add project.version.endsWith('-SNAPSHOT') ? project.repositories.s3RepoSnapshots : project.repositories.s3RepoInternal
+    }
+}

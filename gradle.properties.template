@@ -1,0 +1,4 @@
+version=1.0-SNAPSHOT
+s3repoBaseUrl=s3://your_bucket
+awsAccessKey=your_access_key
+awsSecretKey=your_secret_key
